@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
 
-    "name": "KinoKnopka",
-    "description": "KinoKnopka",
+    "name": "KinoKnopki",
+    "description": "KinoKnopki",
     "version": "0.0.2",
 
     "applications": {
         "gecko": {
-             "id": "kinoknopka@ris58h"
+             "id": "kinoknopki@ris58h"
         }
     },
 
