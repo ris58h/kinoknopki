@@ -6,4 +6,4 @@ const origName = origTitle ? origTitle.firstChild.textContent.trim() : ""
 const name = origName ? origName : headerName
 const year = document.querySelector("#titleYear a").textContent
 
-container.appendChild(createButton(name, year))
+container.appendChild(createButtons(name, year))

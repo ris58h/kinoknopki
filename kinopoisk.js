@@ -5,4 +5,4 @@ const origName = document.querySelector("h1 + span").textContent
 const name = origName ? origName : headerName
 const year = document.querySelector("a[href^='/lists/m_act%5Byear%5D/']").textContent
 
-header.parentElement.appendChild(createButton(name, year))
+header.parentElement.appendChild(createButtons(name, year))
