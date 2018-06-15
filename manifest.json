@@ -13,8 +13,12 @@
 
     "content_scripts": [
         {
-        "matches": ["https://www.kinopoisk.ru/film/*"],
-        "js": ["content.js"]
+            "matches": ["https://www.kinopoisk.ru/film/*"],
+            "js": ["core.js", "kinopoisk.js"]
+        },
+        {
+            "matches": ["https://www.imdb.com/title/*"],
+            "js": ["core.js", "imdb.js"]
         }
     ],
 
