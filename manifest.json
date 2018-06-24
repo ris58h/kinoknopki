@@ -2,7 +2,7 @@
     "manifest_version": 2,
 
     "name": "KinoKnopki",
-    "description": "KinoKnopki",
+    "description": "KinoKnopki добавляет на KinoPoisk и IMDb ссылки на поиск по RuTracker и ThePirateBay.",
     "version": "0.1.0",
 
     "applications": {
