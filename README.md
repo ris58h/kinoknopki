@@ -6,6 +6,6 @@ KinoKnopki adds torrent search links on KinoPoisk and IMDB.
 
 [Firefox](https://addons.mozilla.org/en-US/firefox/addon/kinoknopki/)
 
-![Screenshot1](screenshot1.png)
+![Screenshot](screenshot.png)
 
 ![Screenshot2](screenshot2.png)
