@@ -1,8 +1,21 @@
+const NAV_LINK_PREFIX = "/lists/navigator/"
+const YEAR_REGEX = /^\d{4}$/g
+
 const header = document.querySelector("h1")
+const origName = document.querySelector("h1 + div > span:first-child")?.textContent
+const movieName = origName ? origName : header?.textContent
+if (movieName) {
+    const movieYear = findMovieYear()
+    header.parentElement.appendChild(createButtons(movieName, movieYear))
+}
 
-const headerName = header.textContent
-const origName = document.querySelector("h1 + span").textContent
-const name = origName ? origName : headerName
-const year = document.querySelector("a[href^='/lists/m_act%5Byear%5D/']").textContent
-
-header.parentElement.appendChild(createButtons(name, year))
+function findMovieYear() {
+    const navLinks = document.querySelectorAll("a[href^='" + NAV_LINK_PREFIX + "']")
+    for (navLink of navLinks) {
+        const pathname = navLink.pathname
+        const navLinkValue = pathname.substring(NAV_LINK_PREFIX.length, pathname.length - 1)
+        if (navLinkValue.match(YEAR_REGEX)) {
+            return navLinkValue
+        }
+    }
+}
