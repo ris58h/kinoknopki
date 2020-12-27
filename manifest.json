@@ -3,7 +3,7 @@
 
     "name": "KinoKnopki",
     "description": "KinoKnopki добавляет на KinoPoisk и IMDb ссылки на поиск по RuTracker и ThePirateBay.",
-    "version": "0.1.0",
+    "version": "0.1.1",
 
     "applications": {
         "gecko": {
