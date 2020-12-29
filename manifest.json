@@ -3,7 +3,7 @@
 
     "name": "KinoKnopki",
     "description": "Добавляет на сайты о кино кнопки для поиска на торрентах.",
-    "version": "0.1.1",
+    "version": "0.1.2",
 
     "applications": {
         "gecko": {
