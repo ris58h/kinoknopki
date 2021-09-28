@@ -1,9 +1,19 @@
-const container = document.querySelector(".title_wrapper")
+let container = document.querySelector(".title_wrapper")
 
-const headerName = document.querySelector(".title_wrapper h1").firstChild.textContent.trim()
-const origTitle = document.querySelector(".title_wrapper .originalTitle")
-const origName = origTitle ? origTitle.firstChild.textContent.trim() : ""
-const name = origName ? origName : headerName
-const year = document.querySelector("#titleYear a").textContent
+if (container) {
+    const headerName = document.querySelector(".title_wrapper h1").firstChild.textContent.trim()
+    const origTitle = document.querySelector(".title_wrapper .originalTitle")
+    const origName = origTitle ? origTitle.firstChild.textContent.trim() : ""
+    const name = origName ? origName : headerName
+    const year = document.querySelector("#titleYear a").textContent
+    
+    container.appendChild(createButtons(name, year))
+} else {
+    // New design
+    container = document.querySelector("div[class^='TitleBlock__TitleContainer-']")
 
-container.appendChild(createButtons(name, year))
+    const name = document.querySelector("h1").textContent.trim()
+    const year = document.querySelector("div[class^='TitleBlock__TitleMetaDataContainer-'] ul li a").textContent
+    
+    container.insertBefore(createButtons(name, year), container.firstChild)
+}
