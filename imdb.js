@@ -1,19 +1,22 @@
-let container = document.querySelector(".title_wrapper")
+const YEAR_REGEX = /^\d{4}$/g
 
-if (container) {
-    const headerName = document.querySelector(".title_wrapper h1").firstChild.textContent.trim()
-    const origTitle = document.querySelector(".title_wrapper .originalTitle")
-    const origName = origTitle ? origTitle.firstChild.textContent.trim() : ""
-    const name = origName ? origName : headerName
-    const year = document.querySelector("#titleYear a").textContent
-    
-    container.appendChild(createButtons(name, year))
-} else {
-    // New design
-    container = document.querySelector("div[class^='TitleBlock__TitleContainer-']")
+const header = document.querySelector("h1")
 
-    const name = document.querySelector("h1").textContent.trim()
-    const year = document.querySelector("div[class^='TitleBlock__TitleMetaDataContainer-'] ul li a").textContent
-    
-    container.insertBefore(createButtons(name, year), container.firstChild)
+const movieName = header.textContent.trim()
+const movieYear = findMovieYear()
+
+insertAfter(createButtons(movieName, movieYear), header)
+
+function findMovieYear() {
+    const navLinks = document.querySelectorAll("a.ipc-link")
+    for (navLink of navLinks) {
+        const navLinkValue = navLink.textContent
+        if (navLinkValue.match(YEAR_REGEX)) {
+            return navLinkValue
+        }
+    }
+}
+
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 }
